@@ -1,0 +1,19 @@
+<div class="container" style="padding: 1%;">
+    
+    <li class="list-group-item active">ALUNOS</li>
+
+    <ul class="list-group" *ngFor="let aluno of alunos | paginate: { itemsPerPage: 10, currentPage: numeroPagina, totalItems: count}; let i = index">
+        <li class="list-group-item">{{ aluno.nome }}</li>
+    </ul>
+
+<pagination-controls 
+                      (pageChange)="pageChanged($event)"
+                      maxSize="9"
+                      previousLabel="Voltar"
+                      nextLabel="Proximo"
+                      >
+</pagination-controls>
+
+    <br>
+
+</div>
