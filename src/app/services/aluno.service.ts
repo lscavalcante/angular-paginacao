@@ -23,4 +23,10 @@ export class AlunoService {
     return this.http.get<Page>(`${this.baseURL}v1/?page=${page}`);
   }
 
+  getAlunoPaginacaoFilter(page: number, search: string) : Observable<Page> {
+
+    return this.http.get<Page>(`${this.baseURL}v1/pendente/?page=${page}&search=${search}`);
+    //http://127.0.0.1:8000/aluno/v1/pendente/?page=1&search=5
+  }
+
 }
